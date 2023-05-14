@@ -2311,14 +2311,14 @@ const search_box = document.getElementById("search-box");
 const search_button = document.getElementById("search-button");
 function search() {
     const lookup_word = search_box.value;
-    console.log(lookup_word)
-    const search_true = possible_answers.includes(lookup_word)
+    const lower_lookup_word = lookup_word.toLowerCase();
+    const search_true = possible_answers.includes(lower_lookup_word)
     if (search_true) {
         document.getElementById("search-box").className = "form-control is-valid";
-        document.getElementById("valid-feedback-text").innerHTML = lookup_word + " is a wordle solution!";
+        document.getElementById("valid-feedback-text").innerHTML = lower_lookup_word + " is a wordle solution!";
     } else {
         document.getElementById("search-box").className = "form-control is-invalid";
-        document.getElementById("invalid-feedback-text").innerHTML = `${lookup_word} is not a wordle solution.`;
+        document.getElementById("invalid-feedback-text").innerHTML = `${lower_lookup_word} is not a wordle solution.`;
     }
 }
 search_button.addEventListener('click', search)
