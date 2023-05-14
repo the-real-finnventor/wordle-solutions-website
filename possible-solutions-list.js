@@ -2315,10 +2315,10 @@ function search() {
     const search_true = possible_answers.includes(lower_lookup_word)
     if (search_true) {
         document.getElementById("search-box").className = "form-control is-valid";
-        document.getElementById("valid-feedback-text").innerHTML = lower_lookup_word + " is a wordle solution!";
+        document.getElementById("valid-feedback-text").innerHTML = lookup_word + " is a wordle solution!";
     } else {
         document.getElementById("search-box").className = "form-control is-invalid";
-        document.getElementById("invalid-feedback-text").innerHTML = `${lower_lookup_word} is not a wordle solution.`;
+        document.getElementById("invalid-feedback-text").innerHTML = `${lookup_word} is not a wordle solution.`;
     }
 }
 search_button.addEventListener('click', search)
