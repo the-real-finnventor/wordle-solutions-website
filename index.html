@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The Possible Answer List for the New York Times Wordle Game</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Wordle Solutions</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row" id="header">
+      <div class="col-lg-8" style="padding: 15px 15px 0 15px;">
+        <h1>The Possible Answer List for the New York Times Wordle Game</h1>
+        <p>This is the wordle possible solutions list. This is from when I made a wordle bot using python. If you want
+          to check it out, you can do so <a href="https://github.com/the-real-finnventor/wordle-bot"
+            target="_blank">here</a></p>
+      </div>
+    </div>
+    <div class="row" id="search-bar">
+      <div class="col-lg-4" style="padding: 15px 15px 0 15px;">
+        <div class="input-group mb-3" id="search-bar-element">
+          <input type="text" class="form-control" placeholder="enter word" aria-label="enter word"
+            aria-describedby="search-button" id="search-box" maxlength="5">
+          <button class="btn btn-primary" type="button" id="search-button">Search</button>
+          <div class="valid-feedback" id="valid-feedback-text"></div>
+          <div class="invalid-feedback" id="invalid-feedback-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="collapsable-list">
+      <div class="col-lg-8" style="padding: 15px 15px 0 15px;">
+
+        <div class="bs-component">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Wordle Solutions (click to see the full list)
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <script
+                    src="https://gist.github.com/the-real-finnventor/d9483d586dd129544670f13b8224fda7.js"></script>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="possible-solutions-list.js"></script>
+</body>
+
+</html>
