@@ -2307,8 +2307,8 @@ const possible_answers = ['aback',
     'zebra',
     'zesty',
     'zonal']
-const search_box = document.getElementById("search-box");
-const search_button = document.getElementById("search-button");
+search_box = document.getElementById("search-box")
+search_button = document.getElementById("search-button")
 function search() {
     const lookup_word = search_box.value;
     const lower_lookup_word = lookup_word.toLowerCase();
@@ -2321,9 +2321,15 @@ function search() {
         document.getElementById("invalid-feedback-text").innerHTML = `${lookup_word} is not a wordle solution.`;
     }
 }
+function reset() {
+    document.getElementById("search-box").className = "form-control"
+    document.getElementById("valid-feedback-text").innerHTML = ""
+    document.getElementById("invalid-feedback-text").innerHTML = ""
+}
 search_button.addEventListener('click', search)
 document.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         search();
     }
 });
+search_box.addEventListener("input", reset)
