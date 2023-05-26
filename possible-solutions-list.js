@@ -2309,22 +2309,32 @@ const possible_answers = ['aback',
     'zonal']
 search_box = document.getElementById("search-box")
 search_button = document.getElementById("search-button")
+clear_button = document.getElementById("clear-button")
 function search() {
     const lookup_word = search_box.value;
     const lower_lookup_word = lookup_word.toLowerCase();
     const search_true = possible_answers.includes(lower_lookup_word)
     if (search_true) {
+        const feedback_text = lookup_word + " is a wordle solution!"
         document.getElementById("search-box").className = "form-control is-valid";
-        document.getElementById("valid-feedback-text").innerHTML = lookup_word + " is a wordle solution!";
+        document.getElementById("clear-button").className = "btn btn-transparent border-success is-valid";
+        document.getElementById("valid-feedback-text").innerHTML = feedback_text;
     } else {
+        const feedback_text = lookup_word + " is not a wordle solution."
         document.getElementById("search-box").className = "form-control is-invalid";
-        document.getElementById("invalid-feedback-text").innerHTML = `${lookup_word} is not a wordle solution.`;
+        document.getElementById("clear-button").className = "btn btn-transparent border-danger"
+        document.getElementById("invalid-feedback-text").innerHTML = feedback_text;
     }
 }
-function reset() {
-    document.getElementById("search-box").className = "form-control"
+function reset_style() {
+    document.getElementById("search-box").className = "form-control border-light"
+    document.getElementById("clear-button").className = "btn btn-transparent border-top border-bottom border-light"
     document.getElementById("valid-feedback-text").innerHTML = ""
     document.getElementById("invalid-feedback-text").innerHTML = ""
+}
+function clear() {
+    reset_style();
+    document.getElementById("search-box").value = '';
 }
 search_button.addEventListener('click', search)
 document.addEventListener("keyup", function (event) {
@@ -2332,4 +2342,5 @@ document.addEventListener("keyup", function (event) {
         search();
     }
 });
-search_box.addEventListener("input", reset)
+search_box.addEventListener("input", reset_style)
+clear_button.addEventListener("click", clear)
